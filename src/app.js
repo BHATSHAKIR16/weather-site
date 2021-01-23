@@ -8,6 +8,7 @@ const forecast = require("./utils/forecast")
 //__dirname:is a variable it provides path to the current file 
 
 const app = express()
+const port = process.env.PORT || 3000
 //joins the path with the string provided actually going one directory up
 //define path for express config
 const newPath=path.join(__dirname,'../public')
@@ -113,8 +114,8 @@ app.get("*",(req,res)=>{
 // })
 //to start a server we will use 'app.listen' this starts a server and has the server listen on port 3000
 
-app.listen(3000,()=>{
-    console.log("the app is running on port 3000")
+app.listen(port,()=>{
+    console.log("the app is running on port " + port)
 })
 
 //with web server we have to manually stop this using the ctrl c command
